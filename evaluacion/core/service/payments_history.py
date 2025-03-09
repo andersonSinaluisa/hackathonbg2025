@@ -28,4 +28,7 @@ class PaymentHistoryService:
         for item in lista:
             if item['status'] == 'pagado a tiempo':
                 total_ontime += 1
+        if total == 0 or total_ontime == 0:
+            return 0
+        
         return total_ontime / total
