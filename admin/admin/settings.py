@@ -16,10 +16,8 @@ from dotenv import load_dotenv
 
 # Cargar las variables del archivo .env
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
-print(os.path.join(os.path.dirname(os.path.dirname(__file__)),'.env'))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(os.getenv("DB_HOST"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -131,3 +129,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+API_BANCA = os.getenv("API_BANCA")
