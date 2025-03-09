@@ -14,17 +14,7 @@ class ScoreBuroService:
         response = requests.get(url)
         
         if response.status_code == 200:
-        
-            '''{
-                "scoreId": 1,
-                "cedula": "5926995710",
-                "score": 237,
-                "probMorosidad": 30,
-                "maximoCupoTC": 17074,
-                "marcaTarjeta": "Discover",
-                "cupoCreditos": 5859
-              }'''
-              
+
             data = response.json()
             
             score = data['score']
@@ -41,7 +31,4 @@ class ScoreBuroService:
                 'marcaTarjeta': marcaTarjeta,
                 'cupoCreditos': cupoCreditos
             })
-            
-            
-            
-            
+        

@@ -16,6 +16,5 @@ class CalculateScore(APIView):
     def post(self, request):
         data = self.serializer_class(data=request.data)
         data.is_valid(raise_exception=True)
-        score = 0
-        self.service.calculate(data.validated_data)
-        return Response({'score': score})
+        data = self.service.calculate(**data.validated_data)
+        return Response(data)
