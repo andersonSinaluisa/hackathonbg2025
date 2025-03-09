@@ -131,3 +131,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 API_CNEL = os.getenv("API_CNEL", "http://localhost:8000")
+
+API_BANCA = os.getenv("API_BANCA", "http://localhost:8000")
