@@ -6,6 +6,7 @@ from core.service.score_buro import ScoreBuroService
 from core.service.income import IncomeService
 from core.service.payments_history import PaymentHistoryService
 from core.service.sn_score import SocialScoreService
+from core.service.social_net import SocialNetService
 
 class CalculateScoreService:
     
@@ -14,22 +15,20 @@ class CalculateScoreService:
     W_SOCIAL = 0.15
     W_ONLINE = 0.15
     W_UBICACION = 0.10
-    
-    
-    
+
     def __init__(self):
         self.score_buro = ScoreBuroService()
         self.income = IncomeService()
         self.payment = PaymentHistoryService()
         self.social = SocialScoreService()
-    
+        self.social_net = SocialNetService()
 
 
     def calculate(self, identification, income_value, username_social):
         score_buro = self.score_buro.calculate(identification)
         income = self.income.calculate(income_value)
         payment = self.payment.calculate(identification)
-        social = self.social.calculate(username_social)
+        social = self.social_net.calculate(username_social)
         online =  0.54
         ubicacion = 0.78
         
