@@ -6,6 +6,7 @@ import { ListUserComponent } from './admin/list-user/list-user.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { TokenComponent } from './dashboard/token/token.component';
 import { TokenHttpComponent } from './dashboard/token-http/token-http.component';
+import { ChatbotComponent } from './credit/chatbot/chatbot.component';
 import { adminUsersTokenSummaryResolver, adminTokensUserResolver } from './core/resolvers/admin.resolver';
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path: "admin-dashboard/:id", component:ListTokenComponent,resolve: {data: adminTokensUserResolver}},
     {path: "dashboard", component:HomeComponent},
     {path: "token", component:TokenComponent},
+    {path: "solicitud-asistida", component:ChatbotComponent},
     {path: "token-http", component:TokenHttpComponent},
 
 ];
