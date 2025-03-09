@@ -133,3 +133,4 @@ venv/
 .vscode/
 mysql_data/
 __pycache__/
+chatbot/.env
