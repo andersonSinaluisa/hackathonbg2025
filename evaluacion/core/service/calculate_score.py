@@ -43,8 +43,10 @@ class CalculateScoreService:
             
         ) * 1000
         
+        
+        total = round(score, 2)
         return {
-            'score': score,
+            'score': total,
             'score_buro': score_buro,
             'income': income,
             'payment': payment,
