@@ -30,19 +30,19 @@ class CalculateScoreService:
         income = self.income.calculate(income_value)
         payment = self.payment.calculate(identification)
         social = self.social.calculate(username_social)
-        online =  0
-        ubicacion = 0
+        online =  0.54
+        ubicacion = 0.78
         
         
         
-        score = 100 * (
+        score = (
             self.W_INCOME * income +
             self.W_PAYMENT * payment +
             self.W_SOCIAL * social +
             self.W_ONLINE * online +
             self.W_UBICACION * ubicacion
             
-        )
+        ) * 1000
         
         return {
             'score': score,
